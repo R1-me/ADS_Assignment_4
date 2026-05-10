@@ -31,16 +31,19 @@ public class Graph {
     public void bfs(int start) {
         //Use a Queue to visit nodes level by level (breadth-first)
         //A HashSet keeps track of visited nodes to prevent infinite loops
+        boolean shouldPrint = vertices.size() <= 10;
+
         Set<Integer> visited = new HashSet<>();
         Queue<Integer> queue = new LinkedList<>();
 
         visited.add(start);
         queue.add(start);
 
-        System.out.print("BFS traversal: ");
+        if (shouldPrint) System.out.print("BFS traversal: ");
+
         while (!queue.isEmpty()) {
             int current = queue.poll();
-            System.out.print(current + " ");
+            if (shouldPrint) System.out.print(current + " ");
 
             for (int neighbor : adjacencyList.getOrDefault(current, new LinkedList<>())) {
                 if (!visited.contains(neighbor)) {
@@ -49,24 +52,26 @@ public class Graph {
                 }
             }
         }
-        System.out.println();
+        if (shouldPrint) System.out.println();
     }
 
     public void dfs(int start) {
         //Use recursion to go as deep as possible along each branch before backtrackin
+        boolean shouldPrint = vertices.size() <= 10;
         Set<Integer> visited = new HashSet<>();
-        System.out.print("DFS traversal: ");
-        dfsHelper(start, visited);
-        System.out.println();
+
+        if (shouldPrint) System.out.print("DFS traversal: ");
+        dfsHelper(start, visited, shouldPrint);
+        if (shouldPrint) System.out.println();
     }
 
-    private void dfsHelper(int current, Set<Integer> visited) {
+    private void dfsHelper(int current, Set<Integer> visited, boolean shouldPrint) {
         visited.add(current);
-        System.out.print(current + " ");
+        if (shouldPrint) System.out.print(current + " ");
 
         for (int neighbor : adjacencyList.getOrDefault(current, new LinkedList<>())) {
             if (!visited.contains(neighbor)) {
-                dfsHelper(neighbor, visited);
+                dfsHelper(neighbor, visited, shouldPrint);
             }
         }
     }
