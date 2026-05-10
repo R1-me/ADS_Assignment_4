@@ -29,8 +29,8 @@ public class Graph {
     }
 
     public void bfs(int start) {
-        // Logic: Use a Queue to visit nodes level by level (breadth-first).
-        // A HashSet keeps track of visited nodes to prevent infinite loops.
+        //Use a Queue to visit nodes level by level (breadth-first)
+        //A HashSet keeps track of visited nodes to prevent infinite loops
         Set<Integer> visited = new HashSet<>();
         Queue<Integer> queue = new LinkedList<>();
 
@@ -53,7 +53,7 @@ public class Graph {
     }
 
     public void dfs(int start) {
-        // Logic: Use recursion to go as deep as possible along each branch before backtracking.
+        //Use recursion to go as deep as possible along each branch before backtrackin
         Set<Integer> visited = new HashSet<>();
         System.out.print("DFS traversal: ");
         dfsHelper(start, visited);
