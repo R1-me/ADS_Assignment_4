@@ -38,6 +38,10 @@ All results, including the graph structure, traversal orders for the small graph
 <img width="1920" height="1080" alt="Снимок экрана 2026-05-10 220726" src="https://github.com/user-attachments/assets/3467903d-676f-4d04-9298-e221d394982d" />
 
 
+<img width="1920" height="1000" alt="Снимок экрана 2026-05-14 114115" src="https://github.com/user-attachments/assets/9eafd30d-e45a-4ee9-b88d-ec1f8dbf318e" />
+
+
+
 
 ## F. Reflection
 Through this assignment, I gained a practical understanding of how to move from theoretical graph concepts to a working Java implementation. Implementing the adjacency list using a HashMap and LinkedList was a great way to see how we can efficiently store and manage connections between nodes. The most interesting part was comparing BFS and DFS, it was fascinating to see how BFS uses a Queue to explore neighbors layer by layer, while DFS uses recursion to go as deep as possible before backtracking
